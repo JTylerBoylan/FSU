@@ -1,0 +1,274 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.73 [en] (Win98; U) [Netscape]">
+   <meta name="Author" content="Bob Myers">
+   <title>I/O Foundations</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF">
+
+<h2>I/O Foundations and Classes</h2>
+
+<h3>Streams</h3>
+
+<ul>
+<li>In Java, I/O handled with streams.</li>
+<li>Think of a <i>stream</i> as a sequence of data flowing from one place 
+to another (useful to think of as a buffer of data going one way or the 
+other).
+ <ul>
+ <li>An input stream flows from an input source (e.g. keyboard, file) into 
+  a program, usually to be stored in variables</li>
+ <li>An output stream flows from a program to an output destination (e.g. 
+  screen, file, network socket)</li>
+ </ul>
+</li>
+
+<li>Three stream objects already associated with devices in Java:
+ <ul>
+ <li><tt>System.in</tt> -- standard input stream object</li>
+ <li><tt>System.out</tt> -- standard output stream object</li>
+ <li><tt>System.err</tt> -- standard error stream object</li>
+ </ul>
+</li>
+
+<li>I/O libraries are in the package
+<a href="http://docs.oracle.com/javase/8/docs/api/java/io/package-summary.html">
+<tt>java.io</tt></a>
+ <ul>
+ <li><a href="http://docs.oracle.com/javase/8/docs/api/java/io/package-tree.html">
+     Package Tree</a> -- You can see the hierarchy of <tt>java.io</tt> 
+     classes here</li>
+ </ul>
+</li>
+
+<li>Many built-in stream classes in Java, for processing different types 
+of data.  Two primary categories: <i>byte streams</i> and <i>character 
+streams</i>.
+ <ul>
+ <li><a 
+href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">
+  <tt>InputStream</tt></a> is the base class for byte stream input 
+  classes</li>
+ <li><a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html">
+  <tt>OutputStream</tt></a> is the base class for byte stream output 
+  classes</li>
+ <li><a href="http://docs.oracle.com/javase/8/docs/api/java/io/Reader.html">
+  <tt>Reader</tt></a> is the base class for character stream input 
+  classes</li>
+ <li><a href="http://docs.oracle.com/javase/8/docs/api/java/io/Writer.html">
+  <tt>Writer</tt></a> is the base class for character stream output 
+  classes</li>
+ </ul>
+</li>
+
+
+</ul>
+
+<h3>Reading and Writing with Files</h3>
+
+<ul>
+<li><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html">
+ <tt>File</tt></a> is a class used for retrieving properties of files or 
+     directories on a disk.
+ <ul>
+ <li>Objects of class <tt>File</tt> do <b>not</b> open files or provide  
+     file processing features.</li>
+ </ul>
+</li>
+
+<li>Text files are typically created with character-based streams.  Binary 
+files are typically created with byte streams.</li>
+<li><b>Sequential File</b>:  no regular record structure, typically read or 
+written as an entire file</li>
+<li><b>Random Access File</b>:  structured as uniformly-sized 
+records.  Can read/write either sequentially or by accessing single 
+records anywhere in the file.
+</li>
+
+<li>Basic File I/O classes.
+ <ul>
+  <li>
+   <a href="http://docs.oracle.com/javase/8/docs/api/java/io/FileInputStream.html">
+   <tt>FileInputStream</tt></a> - for byte streams</li>
+  <li>
+   <a href="http://docs.oracle.com/javase/8/docs/api/java/io/FileOutputStream.html">
+   <tt>FileOutputStream</tt></a> - for byte streams</li>
+  <li>
+   <a href="http://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html">
+   <tt>FileReader</tt></a> - for character streams</li>
+  <li>
+   <a href="http://docs.oracle.com/javase/8/docs/api/java/io/FileWriter.html">
+   <tt>FileWriter</tt></a> - for character streams</li>
+
+ </ul>
+</li>
+
+<li>For the input streams, the primary method is called <tt>read</tt>.  
+There is a version that reads one byte (or char), and a version that reads 
+an array of bytes (or chars).</li>
+
+<li>For the output streams, the primary methods are called 
+<tt>write</tt>.  For writing single bytes (or chars) and for arrays of 
+byte (or chars).</li>  
+
+<li>
+<a href="http://docs.oracle.com/javase/8/docs/api/javax/swing/JFileChooser.html">
+<tt>JFileChooser</tt></a> -- a Swing component for popping up a dialog box 
+for easy browsing and selection of a file on a local file system</li>
+
+</ul>
+
+<p><b>Example:</b>  
+<a href="examples/text/ch17/CopyFileUsingByteStream.java">
+CopyFileUsingByteStream.java</a> -- older example, which uses 
+the file stream classes to copy one file to another</p>
+
+
+<h3>Buffered Streams</h3>
+
+<ul>
+<li>Buffered streams help increase efficiency.  They use a buffered array of 
+bytes or characters.  The buffered stream classes are:
+ <ul>
+ <li>
+  <a href="http://docs.oracle.com/javase/8/docs/api/java/io/BufferedInputStream.html">
+  <tt>BufferedInputStream</tt></a> - for byte streams</li>
+ <li>
+  <a href="http://docs.oracle.com/javase/8/docs/api/java/io/BufferedOutputStream.html">
+  <tt>BufferedOutputStream</tt></a> - for byte streams</li>
+ <li>
+  <a href="http://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html">
+  <tt>BufferedReader</tt></a> - for character streams</li>
+ <li>
+  <a href="http://docs.oracle.com/javase/8/docs/api/java/io/BufferedWriter.html">
+  <tt>BufferedWriter</tt></a> - for character streams</li>
+ </ul>
+</li>
+
+<li>Buffered streams are used to add functionality to other streams 
+(i.e. the buffering).  Usually constructed out of other stream 
+objects</li>
+
+<li>For example, to applied buffered streams to file i/o, we can create 
+file streams, and then wrap them in a buffered stream object.  Examples:
+<pre>
+   BufferedReader infile1 = new BufferedReader(new FileReader(filename));
+   BufferedOutputStream outfile1 = new BufferedOutputStream(new FileOutputStream(filename));
+   Reader r1 = new BufferedReader(new FileReader("file1.txt"));
+</pre>
+Note that in the last declaration, the buffered reader object is attached 
+to a <tt>Reader</tt> reference variable.  This is legal since 
+<tt>Reader</tt> is the base class for all reader classes
+</li>
+
+</ul>
+
+<h4>Examples</h4>
+
+These examples work in earlier versions of Java. These use the 
+BufferedReader and BufferedWriter classes.
+
+<ul>
+<li><a href="examples/io/Test1.java">Test1.java</a> -- This program reads 
+an input file and writes an all-uppercase copy of it to an output 
+file.  First argument is the input file, second argument is the 
+output file.</li>
+
+<li><a href="examples/io/Test2.java">Test2.java</a> -- This program reads 
+an input file and counts the number of times a word appears.  First 
+argument is the input file, second argument is the word to search 
+for.</li>
+
+<li><a href="examples/io/Test3.java">Test3.java</a> -- This program uses 
+some classes from the <tt>java.util</tt> package in addition to a file 
+reader, and it lists all the words in the input file along with the number 
+of times each word appears.  The one command-line argument is the 
+input file.</li>
+
+<li><a href="examples/io/Frost.txt">Frost.txt</a> -- here is a sample text 
+file you can use to test each of these programs</li>
+
+</ul>
+
+<h3>Newer Java capabilities (useful for File I/O)</h3>
+
+With Java 1.5, a number of new classes were introduced that made I/O 
+tasks a little easier.
+
+<ul>
+<li><a href="http://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html">
+Formatter</a> class -- an interpreter for printf-style format strings. Can 
+create a Formatter object already attached to a file</li>
+
+<li><a href="http://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html">
+Scanner</a> class -- a text scanner that parses simple tokens more easily. 
+Can create a Scanner and pass in an input stream, or a File object</li>
+
+</ul>
+
+<h3>Input and Output of Objects</h3>
+
+<ul>
+<li><b>Serialization</b> of objects:  representing an object as a sequence 
+ of bytes, which includes:
+ <ul>
+ <li>the object's data</li>
+ <li>info about the object's type</li>
+ <li>info about the types of data in the object</li>
+ </ul>
+</li>
+
+<li>A serialized object can be written to a file as a single item, and 
+then it can be read from a file and deserialized</li>
+
+<li>This can be done with the classes:
+ <ul>
+ <li><a href="http://docs.oracle.com/javase/8/docs/api/java/io/ObjectOutputStream.html">
+     ObjectOutputStream</a></li>
+ <li><a href="http://docs.oracle.com/javase/8/docs/api/java/io/ObjectInputStream.html">
+     ObjectInputStream</a></li>
+ </ul>
+</li>
+
+<li>An object can be serialized if its class implements the interface 
+<tt><b>Serializable</b></tt>
+ <ul>
+ <li><tt>Serializable</tt> is a marker (or tagging) interface</li>
+ <li>To write an object with class <tt>ObjectOutputStream</tt>, it must be 
+     a <tt>Serializable</tt> object</li>
+ <li>Each instance variable in the object must also be 
+     <tt>Serializable</tt> (or must be declared <tt>transient</tt>, and 
+     will be left out of the serialization)</li>
+ </ul>
+</li>
+
+<li>Can combine with File I/O streams.  Example:
+<pre>
+  ObjectOutputStream output;
+  output = new ObjectOutputStream(new FileOutputStream("myfile.dat")); 
+</pre> 
+</li>
+</ul>
+
+
+
+
+<hr>
+
+<h3> 
+<a href="deitel7/ch14/">
+Deitel Examples -- Chapter 14</a> 
+</h3>
+-- Some of these examples use 
+Scanner, Formatter, newer features
+
+<h3>
+<a href="http://www.cs.fsu.edu/~myers/cop3252/notes/deitel5/ch17/">
+Deitel ed. 5 Examples -- Chapter 17</a> 
+</h3>
+-- these examples do I/O without the newer Scanner and Formatter features
+
+</body>
+</html>
