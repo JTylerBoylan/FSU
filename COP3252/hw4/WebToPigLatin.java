@@ -6,8 +6,9 @@ import java.util.Scanner;
 public class WebToPigLatin {
 
     private static final char[] vowels = {'A','a','E','e','I','i','O','o','U','u'};
+
     public static void main(String[] args){
-        
+
         // Check if there are enough arguments
         if (args.length < 2){
             System.out.println("Missing input/output arguments!");
@@ -27,7 +28,7 @@ public class WebToPigLatin {
 
     }
 
-    public static void convert(String inputFilePath, String outputFilePath) throws IOException {
+    private static void convert(String inputFilePath, String outputFilePath) throws IOException {
 
         // Get file objects
         File inputFile = new File(inputFilePath);
@@ -51,21 +52,48 @@ public class WebToPigLatin {
             // Get tag body
             String tag = next.substring(0, close);
 
+            // Write to output
+            writer.write("<" + tag + ">");
+
             // Get text outside of html tags
             String text = next.substring(close+1, next.length());
 
-            // Split text into distinct words
-            String[] words = text.split(" ");
+            // Split text by whitepaces
+            String[] parts = text.split(" ");
 
-            String converted = new String();
+            for (String part : parts) {
 
-            // Convert words to pig latin
-            for (String word : words){
-                converted += toPigLatin(word) + " ";
+                // Find html markers
+                int marker = part.indexOf("&");
+                int endmarker = part.indexOf(";");
+
+                String remaining = part;
+
+                // If there is one, ignore it
+                while (marker != -1 && endmarker != -1 && marker < endmarker){
+
+                    // Seperate marker tag from rest of text
+                    String markerTag = remaining.substring(marker, endmarker+1);
+                    
+                    // Get word before marker
+                    String word = remaining.substring(0,marker);
+
+                    // Write converted word and marker tag to output
+                    writer.write(toPigLatin(word) + markerTag);
+
+                    // Update remaining
+                    remaining = remaining.substring(endmarker+1, remaining.length());
+
+                    // Update indices
+                    marker = remaining.indexOf("&");
+                    endmarker = remaining.indexOf(";");
+
+                }
+
+                // Write remainder converted and whitespace
+                writer.write(toPigLatin(remaining) + " ");
+
             }
-
-            // Write to file
-            writer.write("<" + tag + ">" + converted);
 
         }
 
@@ -75,13 +103,20 @@ public class WebToPigLatin {
 
     }
 
-    public static String toPigLatin(String word) {
+    private static String toPigLatin(String word) {
 
-        if (word.length() == 0)
+        if (word.length() == 0 || !hasLetters(word))
             return word;
 
         // Character array of the word
         char[] chars = word.toCharArray();
+
+        // Determine if there is a newline at the end of the word
+        boolean newline = false;
+        if (chars[chars.length-1] == '\n'){
+            newline = true;
+            chars[chars.length-1] = '\0';
+        }
 
         // Counter variable
         int i = 0;
@@ -105,30 +140,63 @@ public class WebToPigLatin {
         while (e >= 0 && !isLetter(chars[e])){
             successor += chars[e--];
         }
+        
+        // Add newline
+        if (newline)
+            successor += '\n';
 
         // If the first letter is a vowel, then the prefix is empty and the suffix is 'way'
-        String suffix = prefix.length() > 0 ? prefix + "ay" : "way";        
+        String suffix = prefix.length() > 0 ? prefix + "ay" : "way";  
 
-        // Return word in new pig-latin format if possible
-        // If it errors, just return the original word
+        // The remaining letters are the body of the word
+        String body = null;
         try {
-            return precursor + word.substring(i, e+1) + suffix + successor;
+            body = word.substring(i, e+1);
         } catch (StringIndexOutOfBoundsException ex){
-            return word;
+            body = word;
         }
+
+        // If the first letter is capitalized, correct the converted word
+        if (suffix.length() > 0 && body.length() > 0 && isCapitalized(suffix.charAt(0))){
+            char lower = uncapitalize(suffix.charAt(0));
+            suffix = lower + suffix.substring(1, suffix.length());
+            char upper = capitalize(body.charAt(0));
+            body = upper + body.substring(1, body.length());
+        }
+
+        // Return word in new pig-latin format
+        return precursor + body + suffix + successor;
 
     }
 
-    public static boolean isVowel(char c) {
+    private static boolean isVowel(char c) {
         for (char v : vowels)
             if (c == v)
                 return true;
         return false;
     }
 
-    public static boolean isLetter(char c){
-        int ascii = (int) c;
-        return (ascii >= 65 && ascii <= 90) || (ascii >= 97 && ascii <= 122);
+    private static boolean isLetter(char c){
+        return (c >= 65 && c <= 90) || (c >= 97 && c <= 122);
+    }
+
+    private static boolean isCapitalized(char c){
+        return c >= 65 && c <= 90;
+    }
+
+    private static char capitalize(char c){
+        return c >= 97 && c <= 122 ? (char)(c-32) : c;
+    }
+
+    private static char uncapitalize(char c){
+        return c >= 65 && c <= 90 ? (char)(c+32) : c;
+    }
+
+    private static boolean hasLetters(String word){
+        for (char c : word.toCharArray())
+            if (isLetter(c))
+                return true;
+        return false;
     }
 
 
