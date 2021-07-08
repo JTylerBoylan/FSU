@@ -105,7 +105,8 @@ public class WebToPigLatin {
 
     private static String toPigLatin(String word) {
 
-        if (word.length() == 0 || !hasLetters(word))
+        // Word must have vowels
+        if (!hasVowels(word))
             return word;
 
         // Character array of the word
@@ -149,12 +150,7 @@ public class WebToPigLatin {
         String suffix = prefix.length() > 0 ? prefix + "ay" : "way";  
 
         // The remaining letters are the body of the word
-        String body = null;
-        try {
-            body = word.substring(i, e+1);
-        } catch (StringIndexOutOfBoundsException ex){
-            body = word;
-        }
+        String body = word.substring(i, e+1);
 
         // If the first letter is capitalized, correct the converted word
         if (suffix.length() > 0 && body.length() > 0 && isCapitalized(suffix.charAt(0))){
@@ -192,9 +188,9 @@ public class WebToPigLatin {
         return c >= 65 && c <= 90 ? (char)(c+32) : c;
     }
 
-    private static boolean hasLetters(String word){
+    private static boolean hasVowels(String word){
         for (char c : word.toCharArray())
-            if (isLetter(c))
+            if (isVowel(c))
                 return true;
         return false;
     }
