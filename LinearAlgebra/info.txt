@@ -1,1 +1,0 @@
-Here is Java code I wrote for my Linear Algebra class.
