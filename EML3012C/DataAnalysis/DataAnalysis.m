@@ -108,7 +108,7 @@ classdef DataAnalysis
         
         function obj = mpower(obj, n)
             mu = obj.best^n;
-            nle = n*obj.le/obj.best;
+            nle = mu*n*obj.le/obj.best;
             sigma = obj.sle2std(obj.sle_func,nle,2);
             alpha = sigma/sqrt(2);
             obj.data = [mu-alpha mu+alpha];
