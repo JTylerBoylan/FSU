@@ -1,0 +1,10 @@
+Original: D = 44±4
+After Rejection: D = 45±2
+Max Uncertainty: D = 45±2
+A = 6.2±0.4
+B = 12.5±0.8
+A + B = 18.7±0.9
+A - B = -6.3±0.9
+A * B = 78±7
+A / B = 0.5±0.04
+A^3 = 240.9±0.2
