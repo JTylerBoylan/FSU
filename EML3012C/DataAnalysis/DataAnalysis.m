@@ -45,12 +45,16 @@ classdef DataAnalysis
             l = obj.le_func(obj.ile,obj.sle);
         end
         
-        function str = tostr(obj)
+        function str = tostr(obj,p)
             %TOSTR Converts DataAnalysis to string in best +- error format
-            rl = round(obj.le,1,'significant');
+            %Input p adds p significant figures (used when first number is 1)
+            if nargin < 2
+                p = 0;
+            end
+            rl = round(obj.le,1+p,'significant');
             huh = ceil(log10(abs(obj.best))) - floor(log10(obj.le));
             % ^ Don't ask me why this works so well
-            rb = round(obj.best,huh,'significant');
+            rb = round(obj.best,huh+p,'significant');
             b = num2str(rb);
             e = num2str(rl);
             c = char(177);
