@@ -1,0 +1,22 @@
+NOTE: the max-degree is preset to 10 in the class declaration.
+Start testing ...
+
+p1 is: -7x^10 - 6x^9 - 5x^8 - 4x^7 - 3x^6 - 2x^5 - x^4 + x^2 + 2x + 3
+p1.getDegree(): 10
+p2 is: 32x^10 + 33x^9 + 34x^8 + 35x^7 + 36x^6 + 37x^5 + 38x^4 + 39x^3 + 40x^2 + 41x + 42
+p2.getDegree(): 10
+p1 is: -7a^10 - 6a^9 - 5a^8 - 4a^7 - 3a^6 - 2a^5 - a^4 + a^2 + 2a + 3
+-7a^10 - 6a^9 - 5a^8 - 4a^7 - 3a^6 - 2a^5 - a^4 + 10a^2 + 2a + 3 at 0 evaluates to: 3
+-7a^10 - 6a^9 - 5a^8 - 4a^7 - 3a^6 - 2a^5 - a^4 + 10a^2 + 2a + 3 at 2 evaluates to: -12257
+
+p2 + p1: 25x^10 + 27x^9 + 29x^8 + 31x^7 + 33x^6 + 35x^5 + 37x^4 + 39x^3 + 50x^2 + 43x + 45
+p1 + p2: 25a^10 + 27a^9 + 29a^8 + 31a^7 + 33a^6 + 35a^5 + 37a^4 + 39a^3 + 50a^2 + 43a + 45
+p2 - p1: 39x^10 + 39x^9 + 39x^8 + 39x^7 + 39x^6 + 39x^5 + 39x^4 + 39x^3 + 30x^2 + 39x + 39
+p1 - p2: -39a^10 - 39a^9 - 39a^8 - 39a^7 - 39a^6 - 39a^5 - 39a^4 - 39a^3 - 30a^2 - 39a - 39
+p1 * p2: -618a^10 - 330a^9 - 78a^8 + 137a^7 + 314a^6 + 452a^5 + 550a^4 + 607a^3 + 622a^2 + 207a + 126
+p2 * p1: -618x^10 - 330x^9 - 78x^8 + 137x^7 + 314x^6 + 452x^5 + 550x^4 + 607x^3 + 622x^2 + 207x + 126
+
+p1 is not equal to p2
+p1.getDegree(): -1
+p2.getDegree(): -1
+p1 is equal to p2
