@@ -93,8 +93,13 @@ classdef DataAnalysis
         end
         
         function obj = mtimes(obj, obj2)
-            mu = obj.best*obj2.best;
-            nle = mu*norm([obj.le/obj.best obj2.le/obj2.best]);
+            if isa(obj2,'DataAnalysis')
+                mu = obj.best*obj2.best;
+                nle = mu*norm([obj.le/obj.best obj2.le/obj2.best]);
+            else
+                mu = obj.best*obj2;
+                nle = obj.le*obj2;
+            end
             sigma = obj.sle2std(obj.sle_func,nle,2);
             alpha = sigma/sqrt(2);
             obj.data = [mu-alpha mu+alpha];

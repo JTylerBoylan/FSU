@@ -70,6 +70,9 @@ disp(['A - B = ',analysis_D.tostr]);
 analysis_E = analysis_A * analysis_B;
 disp(['A * B = ',analysis_E.tostr]);
 
+analysis_E2 = analysis_A * 3;
+disp(['3A = ', analysis_E2.tostr]);
+
 % Use '/' operator for division
 analysis_F = analysis_A / analysis_B;
 disp(['A / B = ',analysis_F.tostr]);
