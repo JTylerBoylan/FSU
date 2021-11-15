@@ -1,1 +1,140 @@
+Tensile Properties of 1018 Cold Rolled Steel
+---------------------------------------------------------------------------
+Property                       Value           Standard Value     Error     
+---------------------------------------------------------------------------
+Modulus of Elasticity (E)      184.05 GPa	 200.00 GPa		 7.98 %
+Proportional Limit (σ_p)       368.50 MPa
+Yield Strength (σ_y)           634.32 MPa	 370.00 MPa		 71.44 %
+Tensile Strength (σ_u)         658.91 MPa	 440.00 MPa		 49.75 %
+Fracture Strength (σ_f)        420.75 MPa
+Strain Hardening Ratio         1.04
+Elongation [Data] (%EL)        12.08 %
+Elongation [Measured] (%EL)    12.80 %		 15.00  %		 14.67 %
+Reduction in Area (%RA)        55.04 %
+Poisson's Ratio (ν)            2.57 		 0.29 		 787.61 %
+Modulus of Resilience (U_r)    1.723 kJ/m^3
+Modulus of Toughness (U_t)     78.11 MJ/m^3
+Strain Hardening Exponent (n)  0.03 		 0.23 		 87.52 %
+Strength Coefficient (H)       750.36
+
+
+Tensile Properties of A36 Hot Rolled Steel
+---------------------------------------------------------------------------
+Property                       Value           Standard Value     Error     
+---------------------------------------------------------------------------
+Modulus of Elasticity (E)      199.58 GPa	 200.00 GPa		 0.21 %
+Proportional Limit (σ_p)       414.09 MPa
+Yield Strength (σ_y)           353.30 MPa	 250.00 MPa		 41.32 %
+Tensile Strength (σ_u)         502.82 MPa	 475.00 MPa		 5.86 %
+Fracture Strength (σ_f)        361.87 MPa
+Strain Hardening Ratio         1.42
+Elongation [Data] (%EL)        29.53 %
+Elongation [Measured] (%EL)    33.20 %		 23.00  %		 44.35 %
+Reduction in Area (%RA)        62.46 %
+Poisson's Ratio (ν)            1.17 		 0.26 		 348.66 %
+Modulus of Resilience (U_r)    0.885 kJ/m^3
+Modulus of Toughness (U_t)     126.42 MJ/m^3
+Strain Hardening Exponent (n)  0.22 		 0.23 		 5.37 %
+Strength Coefficient (H)       884.24
+
+
+Tensile Properties of Grey 20 Cast Iron
+---------------------------------------------------------------------------
+Property                       Value           Standard Value     Error     
+---------------------------------------------------------------------------
+Modulus of Elasticity (E)      74.37 GPa	 82.00 GPa		 9.30 %
+Proportional Limit (σ_p)       73.79 MPa
+Yield Strength (σ_y)           144.97 MPa	 65.00 MPa		 123.03 %
+Tensile Strength (σ_u)         181.92 MPa	 152.00 MPa		 19.68 %
+Fracture Strength (σ_f)        181.92 MPa
+Strain Hardening Ratio         1.25
+Elongation [Data] (%EL)        1.02 %
+Elongation [Measured] (%EL)    2.00 %		 7.00  %		 71.43 %
+Reduction in Area (%RA)        3.44 %
+Poisson's Ratio (ν)            0.87 		 0.29 		 198.98 %
+Modulus of Resilience (U_r)    0.975 kJ/m^3
+Modulus of Toughness (U_t)     1.24 MJ/m^3
+Strain Hardening Exponent (n)  0.24 		 0.23 		 6.11 %
+Strength Coefficient (H)       569.77
+
+
+Tensile Properties of AA 6061 0HR Heat Treatment
+---------------------------------------------------------------------------
+Property                       Value           Standard Value     Error     
+---------------------------------------------------------------------------
+Modulus of Elasticity (E)      68.67 GPa	 68.90 GPa		 0.34 %
+Proportional Limit (σ_p)       137.43 MPa
+Yield Strength (σ_y)           280.00 MPa	 276.00 MPa		 1.45 %
+Tensile Strength (σ_u)         305.98 MPa	 310.00 MPa		 1.30 %
+Fracture Strength (σ_f)        226.80 MPa
+Strain Hardening Ratio         1.09
+Elongation [Data] (%EL)        15.18 %
+Elongation [Measured] (%EL)    15.40 %		 15.00  %		 2.67 %
+Reduction in Area (%RA)        22.80 %
+Poisson's Ratio (ν)            0.79 		 0.33 		 138.86 %
+Modulus of Resilience (U_r)    2.039 kJ/m^3
+Modulus of Toughness (U_t)     44.48 MJ/m^3
+Strain Hardening Exponent (n)  0.08 		 0.23 		 64.25 %
+Strength Coefficient (H)       405.17
+
+
+Tensile Properties of AA 6061 2HR Heat Treatment
+---------------------------------------------------------------------------
+Property                       Value           Standard Value     Error     
+---------------------------------------------------------------------------
+Modulus of Elasticity (E)      65.72 GPa	 68.90 GPa		 4.62 %
+Proportional Limit (σ_p)       131.55 MPa
+Yield Strength (σ_y)           257.18 MPa	 276.00 MPa		 6.82 %
+Tensile Strength (σ_u)         288.17 MPa	 310.00 MPa		 7.04 %
+Fracture Strength (σ_f)        199.23 MPa
+Strain Hardening Ratio         1.12
+Elongation [Data] (%EL)        15.49 %
+Elongation [Measured] (%EL)    19.60 %		 15.00  %		 30.67 %
+Reduction in Area (%RA)        32.63 %
+Poisson's Ratio (ν)            0.91 		 0.33 		 177.04 %
+Modulus of Resilience (U_r)    1.957 kJ/m^3
+Modulus of Toughness (U_t)     42.24 MJ/m^3
+Strain Hardening Exponent (n)  0.09 		 0.23 		 61.74 %
+Strength Coefficient (H)       387.06
+
+
+Tensile Properties of AA 6061 4HR Heat Treatment
+---------------------------------------------------------------------------
+Property                       Value           Standard Value     Error     
+---------------------------------------------------------------------------
+Modulus of Elasticity (E)      68.68 GPa	 68.90 GPa		 0.32 %
+Proportional Limit (σ_p)       138.05 MPa
+Yield Strength (σ_y)           255.53 MPa	 276.00 MPa		 7.42 %
+Tensile Strength (σ_u)         276.61 MPa	 310.00 MPa		 10.77 %
+Fracture Strength (σ_f)        198.53 MPa
+Strain Hardening Ratio         1.08
+Elongation [Data] (%EL)        14.15 %
+Elongation [Measured] (%EL)    17.20 %		 15.00  %		 14.67 %
+Reduction in Area (%RA)        14.46 %
+Poisson's Ratio (ν)            0.44 		 0.33 		 32.39 %
+Modulus of Resilience (U_r)    1.860 kJ/m^3
+Modulus of Toughness (U_t)     37.65 MJ/m^3
+Strain Hardening Exponent (n)  0.08 		 0.23 		 67.23 %
+Strength Coefficient (H)       360.09
+
+
+Tensile Properties of AA 6061 6HR Heat Treatment
+---------------------------------------------------------------------------
+Property                       Value           Standard Value     Error     
+---------------------------------------------------------------------------
+Modulus of Elasticity (E)      68.28 GPa	 68.90 GPa		 0.90 %
+Proportional Limit (σ_p)       136.48 MPa
+Yield Strength (σ_y)           284.99 MPa	 276.00 MPa		 3.26 %
+Tensile Strength (σ_u)         306.23 MPa	 310.00 MPa		 1.22 %
+Fracture Strength (σ_f)        228.15 MPa
+Strain Hardening Ratio         1.07
+Elongation [Data] (%EL)        14.48 %
+Elongation [Measured] (%EL)    10.60 %		 15.00  %		 29.33 %
+Reduction in Area (%RA)        14.46 %
+Poisson's Ratio (ν)            0.71 		 0.33 		 114.82 %
+Modulus of Resilience (U_r)    2.087 kJ/m^3
+Modulus of Toughness (U_t)     42.80 MJ/m^3
+Strain Hardening Exponent (n)  0.07 		 0.23 		 67.93 %
+Strength Coefficient (H)       396.92
+
 
